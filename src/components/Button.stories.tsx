@@ -16,7 +16,7 @@ export const Create: StoryObj<ButtonProps> = {} //exporto como objeto vazio, poi
 export const Delete: StoryObj<ButtonProps> = {
     args:{
         children: '',
-        isDelete: true
+        isDelete: true,
     }
 } 
 

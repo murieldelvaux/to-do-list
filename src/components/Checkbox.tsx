@@ -6,9 +6,11 @@ import { Text } from './Text'
 
 export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps{
     checked?: boolean,
+    children: string,
+    id?:string,
 }
 
-export function Checkbox({checked,...props}: CheckboxProps){ // padronizando size como medium
+export function Checkbox({id,checked,...props}: CheckboxProps){ // padronizando size como medium
     const [check, setCheck]= useState(false)    
     function handleDataState(){
         checked= !check
@@ -18,12 +20,12 @@ export function Checkbox({checked,...props}: CheckboxProps){ // padronizando siz
     }
     return(
         <>
-            <CheckboxPrimitive.Checkbox id='checkbox' className={check? clsx('flex items-center w-6 h-6 p-[2px] outline-none bg-purple-900 border-2 border-purple-900 rounded-full hover:bg-purple-400 hover:border-purple-400'):clsx('flex items-center w-6 h-6 p-[2px] outline-none bg-gray-600 border-2 border-blue-400 rounded-full hover:border-blue-900')} {...props} onClick={handleDataState} checked={checked}>
+            <CheckboxPrimitive.Checkbox id={id} className={check? clsx('flex items-center w-6 h-6 p-[2px] outline-none bg-purple-900 border-2 border-purple-900 rounded-full hover:bg-purple-400 hover:border-purple-400'):clsx('flex items-center w-6 h-6 p-[2px] outline-none bg-gray-600 border-2 border-blue-400 rounded-full hover:border-blue-900')} {...props} onClick={handleDataState} checked={checked}>
                 <CheckboxPrimitive.Indicator asChild >
                     <Check weight='bold' className='flex w-full rounded-full text-gray-100' />
                 </CheckboxPrimitive.Indicator>
             </CheckboxPrimitive.Checkbox>
-            < Text className={check? clsx('line-through text-gray-300'):''}>oii</Text>
+            < Text className={check? clsx('line-through text-gray-300'):''}>{props.children}</Text>
         </>
     )
 }
