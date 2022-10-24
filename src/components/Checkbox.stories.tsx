@@ -6,7 +6,9 @@ import { Text } from './Text';
 export default{
     title: 'Components/Checkbox', // a barra cria subcategorias
     component: Checkbox,
-    
+    args:{
+        id:''
+    },
     argTypes:{},
     decorators:[
         (Story)=>(
