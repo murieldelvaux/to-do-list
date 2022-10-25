@@ -64,7 +64,7 @@ export function List({checked,children,...props}:CheckboxProps) {
     }
   return (
         <>
-            <div className={clsx('w-screen h-full flex flex-col  text-gray-100 bg-gray-600')}>
+            <div className={createTask>5?clsx('w-screen h-full flex flex-col  text-gray-100 bg-gray-600'):clsx('w-screen h-screen flex flex-col  text-gray-100 bg-gray-600')}>
                 <header className='flex flex-col items-center justify-center h-48 bg-gray-700'>
                     <Logo />
                 </header>
